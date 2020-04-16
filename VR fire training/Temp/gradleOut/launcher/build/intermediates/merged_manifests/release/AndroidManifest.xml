@@ -67,7 +67,7 @@
             android:value="portrait|landscape" />
         <meta-data
             android:name="unity.build-id"
-            android:value="3e0ffde1-8e17-405f-9287-f305243cfaa0" />
+            android:value="17455866-218d-4208-ad31-9e986ff94d01" />
         <meta-data
             android:name="com.samsung.android.vr.application.mode"
             android:value="vr_only" />

@@ -64,6 +64,8 @@ public class FireDrill : MonoBehaviour
         FireProps.SetActive(true);
         Door.SetActive(false);
         running = true;
+        manager.music.FireDrill();
+
 
     }
 }

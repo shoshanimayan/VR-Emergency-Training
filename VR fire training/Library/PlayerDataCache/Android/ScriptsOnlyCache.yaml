@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - UIMenu
     - handshake
     - hoverInfo
+    - musicManager
     - player
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -82,6 +83,8 @@ ScriptsOnlyBuild:
     - Class: 65
       Script: {instanceID: 0}
     - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
@@ -159,6 +162,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 661120}
     - Class: 114
       Script: {instanceID: 818318}
+    - Class: 114
+      Script: {instanceID: 999936}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -902,7 +907,7 @@ ScriptsOnlyBuild:
     className: UIMenu
   - hash:
       serializedVersion: 2
-      Hash: 2dd906cae674d862162253645056bfa2
+      Hash: e044e1c95800b3966389e4f664c5383c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -918,6 +923,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: hoverInfo
+  - hash:
+      serializedVersion: 2
+      Hash: ca9fa7cb7be8e6f6f9151fe181b0dd32
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: musicManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/office.unity

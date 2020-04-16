@@ -62,6 +62,8 @@ public class EarthQuakeDrill : MonoBehaviour
         earthQuakeProps.SetActive(true);
         running = true;
         ScreenShakeVR.active = true;
+        manager.music.EarthQuakeDrill();
+
 
     }
 }

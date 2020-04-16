@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool running;
     public GameObject[] menus;
     public static float time;
+    public musicManager music;
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
         Instructions.enabled = true;
     }
     public void off() {
-
+        music.Stop();
         Timer.enabled = false;
         Instructions.enabled = false;
         UIMenu.reset = true;
