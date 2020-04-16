@@ -2,14 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-[ExecuteInEditMode]
 public class ScreenShakeVR : MonoBehaviour
 {
 
     public static ScreenShakeVR instance;
 
     Material material;
-
+	public static bool active=true;
     public float shakeMagnitude = 0.1f;
     public float shakeFrequency = 20f;
 
@@ -17,7 +16,7 @@ public class ScreenShakeVR : MonoBehaviour
     float shakeCumulation;
 
     [Tooltip("Shake the screen when the space key is pressed")]
-    public bool debug = false;
+    public bool debug = true;
 
     public class ShakeEvent
     {
@@ -98,9 +97,9 @@ public class ScreenShakeVR : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && debug)
+        if (active)
         {
-            Shake(0.5f, 1.0f);
+            Shake(.5f, 1.0f);
         }
 
         shakeCumulation = 0;

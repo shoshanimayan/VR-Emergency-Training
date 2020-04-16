@@ -8,7 +8,7 @@ public class FireDrill : MonoBehaviour
     public  bool running;
     public GameObject FireProps;
     public GameObject Door;
-    private string instruction = "please follow the arrows to the exit";
+    private string instruction = "please follow the arrows to evacuate the building";
     // Start is called before the first frame update
     void Awake()
     {

@@ -7,11 +7,12 @@ public class EarthQuakeDrill : MonoBehaviour
     public GameManager manager;
     public  bool running;
     public GameObject earthQuakeProps;
-    private string instruction = "for your saftey get under a table";
+    private string instruction = "for your saftey get under a table during an earth quake";
     // Start is called before the first frame update
     void Awake()
     {
         running = false;
+        earthQuakeProps.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +51,7 @@ public class EarthQuakeDrill : MonoBehaviour
         }
         else { sec = Mathf.RoundToInt(seconds).ToString(); }
         UIMenu.AfterText = "Completed earthquake training\nTime: "+ min + ":" + sec;
+        ScreenShakeVR.active = false;
 
     }
 
@@ -59,6 +61,7 @@ public class EarthQuakeDrill : MonoBehaviour
         manager.TextUpdate(instruction);
         earthQuakeProps.SetActive(true);
         running = true;
+        ScreenShakeVR.active = true;
 
     }
 }
