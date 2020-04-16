@@ -1,10 +1,15 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - EarthQuakeDrill
+    - FireDrill
+    - GameManager
     - MovementController
     - OculusHandAnimation
     - Readme
+    - UIMenu
     - handshake
+    - player
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.Interaction.Toolkit.dll:
@@ -136,6 +141,16 @@ ScriptsOnlyBuild:
       Script: {instanceID: 159772}
     - Class: 114
       Script: {instanceID: 341108}
+    - Class: 114
+      Script: {instanceID: 432082}
+    - Class: 114
+      Script: {instanceID: 432088}
+    - Class: 114
+      Script: {instanceID: 432128}
+    - Class: 114
+      Script: {instanceID: 432134}
+    - Class: 114
+      Script: {instanceID: 661120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -152,6 +167,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -161,6 +180,8 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 258
+      Script: {instanceID: 0}
+    - Class: 319
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -849,13 +870,13 @@ ScriptsOnlyBuild:
     className: handshake
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f5a8aa447a472baf7bba4970bc10e651
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FireDrill
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: cfaf6c8c3ba14e15c167299f84077085
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EarthQuakeDrill
@@ -867,16 +888,22 @@ ScriptsOnlyBuild:
     className: Timer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 05cd0e04dc51fccee2f0f4fe37515150
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIMenu
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 2dd906cae674d862162253645056bfa2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3ac24a468266dfdd6304e02594877861
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: player
   platform: 13
   scenePathNames:
   - Assets/Scenes/office.unity
