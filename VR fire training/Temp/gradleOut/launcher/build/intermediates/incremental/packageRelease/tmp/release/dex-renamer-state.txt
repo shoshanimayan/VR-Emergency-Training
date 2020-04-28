@@ -1,4 +1,0 @@
-#Thu Apr 16 15:07:14 PDT 2020
-base.0=/Users/mayanshoshani/Documents/VR-Fire-Training/VR fire training/Temp/gradleOut/launcher/build/intermediates/transforms/dexMerger/release/0
-path.0=classes.dex
-renamed.0=classes.dex

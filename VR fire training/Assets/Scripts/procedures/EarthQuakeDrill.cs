@@ -51,7 +51,6 @@ public class EarthQuakeDrill : MonoBehaviour
         }
         else { sec = Mathf.RoundToInt(seconds).ToString(); }
         UIMenu.AfterText = "Completed earthquake training\nTime: "+ min + ":" + sec;
-        ScreenShakeVR.active = false;
 
     }
 
@@ -61,7 +60,6 @@ public class EarthQuakeDrill : MonoBehaviour
         manager.TextUpdate(instruction);
         earthQuakeProps.SetActive(true);
         running = true;
-        ScreenShakeVR.active = true;
         manager.music.EarthQuakeDrill();
 
 

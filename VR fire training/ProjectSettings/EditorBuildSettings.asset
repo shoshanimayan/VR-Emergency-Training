@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/office.unity
     guid: 2194fe559202da244a6cc0ad8cbc636d
+  - enabled: 1
+    path: Assets/Scenes/airplane.unity
+    guid: 03e90d9f433eb4141808922906d2187e
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3d3bc4ea74eb642eba7ad92afeaf08c2,
       type: 2}
