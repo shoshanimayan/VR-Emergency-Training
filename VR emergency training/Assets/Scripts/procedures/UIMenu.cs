@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class UIMenu : MonoBehaviour
 {
     public GameObject instructions;
-    public FireDrill fire;
-    public EarthQuakeDrill earthquake;
+    public Procedure procedure;
+   
     private GameObject board;
     public static string AfterText;
     public static bool reset = false;
@@ -39,15 +39,11 @@ public class UIMenu : MonoBehaviour
         board.SetActive(false);
     }
 
-    public void StartFire() {
+    public void StartProcedure() {
         CloseInstructions();
-        fire.Initiate();
+        procedure.Initiate();
         Close();
     }
 
-    public void StartEarthQuake() {
-        CloseInstructions();
-        earthquake.Initiate();
-        Close();
-    }
+    
 }

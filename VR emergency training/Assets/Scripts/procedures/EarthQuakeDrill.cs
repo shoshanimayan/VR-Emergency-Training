@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthQuakeDrill : MonoBehaviour
+public class EarthQuakeDrill : Procedure
 {
     public GameManager manager;
     public  bool running;
@@ -16,18 +16,7 @@ public class EarthQuakeDrill : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-        if (running)
-        {
-
-        }
-        else
-        {
-         
-        }
-    }
+ 
     public void message(string text) {
         manager.TextUpdate(text);
     }
@@ -50,13 +39,13 @@ public class EarthQuakeDrill : MonoBehaviour
             sec = "0" + Mathf.RoundToInt(seconds).ToString();
         }
         else { sec = Mathf.RoundToInt(seconds).ToString(); }
-        UIMenu.AfterText = "Completed earthquake training\nTime: "+ min + ":" + sec;
+        UIMenu.AfterText = "Completed Fire Drill training\nTime: " + min + ":" + sec + "\nHints found: " + GameManager.hintsChecked.Count.ToString() + "/" + GameManager.hintsTotal.ToString();
 
     }
 
-    public void Initiate()
+    public override void Initiate()
     {
-        manager.on();
+        manager.on(2,"earthquake");
         manager.TextUpdate(instruction);
         earthQuakeProps.SetActive(true);
         running = true;

@@ -14,14 +14,15 @@ public class hoverInfo : XRBaseInteractable
         base.Awake();
         onHoverEnter.AddListener(on);
         onHoverExit.AddListener(off);
-       // onSelectEnter.AddListener(on);
-       // onSelectExit.AddListener(off);
         
     }
     
     public void on(XRBaseInteractor interactor) {
 		debug.enabled = true;
 		debug.text = message;
+        if (!GameManager.hintsChecked.Contains(gameObject)) {
+            GameManager.hintsChecked.Add(gameObject);
+        }
  }
 
 	public void off(XRBaseInteractor interactor) {
