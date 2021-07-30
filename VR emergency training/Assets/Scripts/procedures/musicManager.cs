@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class musicManager : MonoBehaviour
 {
-    private AudioSource AS;
-    public AudioClip fireAlarm;
-    public AudioClip EarthQuakeAlarm;
-    
-    // Start is called before the first frame update
-    void Awake()
+    /////////////////// 
+    //private Variables
+    ///////////////////
+    private AudioSource _aS;
+    [SerializeField] private AudioClip _fireAlarm;
+    [SerializeField] private AudioClip _EarthQuakeAlarm;
+
+
+    /////////////////// 
+    //private methods
+    //////////////////
+    private void Awake()
     {
-        AS = GetComponent<AudioSource>();
+        _aS = GetComponent<AudioSource>();
     }
 
-    public void FireDrill() {
-        AS.clip = fireAlarm;
-        AS.Play();
+    /////////////////// 
+    //public API
+    //////////////////
+    public void FireDrillAudio() {
+        _aS.clip = _fireAlarm;
+        _aS.Play();
     }
 
-    public void EarthQuakeDrill()
+    public void EarthQuakeDrillAudio()
     {
-        AS.clip = EarthQuakeAlarm;
-        AS.Play();
+        _aS.clip = _EarthQuakeAlarm;
+        _aS.Play();
     }
 
-    public void Stop()
+    public void StopAudio()
     {
-        AS.Stop();
+        _aS.Stop();
         
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GoToOffice : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void loadOffice()
+    public void LoadOffice()
     {
         SceneManager.LoadScene(0);
     }

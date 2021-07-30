@@ -5,15 +5,23 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class MovementController : LocomotionProvider
 {
-    public float gravityMultiplier = 1f;
-    public float speed = 1f;
-    public List<XRController> controllers = null;
-    private CharacterController characterController = null;
-    private GameObject head = null;
+
+    /////////////////// 
+    //private Variables
+    ///////////////////
+    private CharacterController _characterController = null;
+    private GameObject _head = null;
+    [SerializeField] private float _gravityMultiplier = 10f;
+    [SerializeField] private float _speed = 2f;
+    [SerializeField] private List<XRController> _controllers = null;
+
+    /////////////////// 
+    //private methods
+    ///////////////////
     protected override void Awake()
     {
-        characterController = GetComponent<CharacterController>();
-        head = GetComponent<XRRig>().cameraGameObject;
+        _characterController = GetComponent<CharacterController>();
+        _head = GetComponent<XRRig>().cameraGameObject;
     }
 
     private void Start()
@@ -31,23 +39,23 @@ public class MovementController : LocomotionProvider
     private void PositionController()
     {
         // Get the head in local, playspace ground
-        float headHight = Mathf.Clamp(head.transform.localPosition.y,1,2);
-        characterController.height = headHight;
+        float headHight = Mathf.Clamp(_head.transform.localPosition.y,1,2);
+        _characterController.height = headHight;
         // Cut in half, add skin
         Vector3 newCenter = Vector3.zero;
-        newCenter.y = characterController.height / 2;
-        newCenter.y += characterController.skinWidth;
-        // Let's move the capsule in local space as well
-        newCenter.x = head.transform.localPosition.x;
-        newCenter.z = head.transform.localPosition.z;
+        newCenter.y = _characterController.height / 2;
+        newCenter.y += _characterController.skinWidth;
+        // move the capsule in local space as well
+        newCenter.x = _head.transform.localPosition.x;
+        newCenter.z = _head.transform.localPosition.z;
 
         // Apply
-        characterController.center = newCenter;
+        _characterController.center = newCenter;
     }
 
     private void CheckForInput()
     {
-        foreach (XRController controller in controllers) {
+        foreach (XRController controller in _controllers) {
             if (controller.enableInputActions)
             {
                 CheckForMovement(controller.inputDevice);
@@ -63,22 +71,21 @@ public class MovementController : LocomotionProvider
 
     private void StartMove(Vector2 position)
     {
-        // Apply the touch position to the head's forward Vector
 
         Vector3 direction = new Vector3(position.x, 0, position.y);
-        Vector3 headRotation = new Vector3(0,head.transform.eulerAngles.y,0);
-
-        // Rotate the input direction by the horizontal head rotation
+        Vector3 headRotation = new Vector3(0,_head.transform.eulerAngles.y,0);
         direction = Quaternion.Euler(headRotation)*direction;
-        // Apply speed and move
-        Vector3 movement = direction * speed;
-        characterController.Move(movement*Time.deltaTime);
+        Vector3 movement = direction * _speed;
+        _characterController.Move(movement*Time.deltaTime);
     }
 
     private void ApplyGravity()
     {
-        Vector3 gravity = new Vector3(0, Physics.gravity.y * gravityMultiplier, 0);
+        Vector3 gravity = new Vector3(0, Physics.gravity.y * _gravityMultiplier, 0);
         gravity.y*=Time.deltaTime;
-        characterController.Move(gravity * Time.deltaTime);
+        _characterController.Move(gravity * Time.deltaTime);
     }
+
+
+
 }

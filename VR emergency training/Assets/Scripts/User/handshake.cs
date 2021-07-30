@@ -7,32 +7,42 @@ using UnityEngine.XR;
 
 public class handshake : MonoBehaviour
 {
-    public XRRayInteractor xrray;
-    public LineRenderer linerender;
-    public XRInteractorLineVisual XRlineVis;
+    /////////////////// 
+    //private Variables
+    ///////////////////
+    private XRRayInteractor _xrray;
+     private LineRenderer _linerender;
+     private XRInteractorLineVisual _xrLineVis;
 
-    public XRNode HandType;
+    [SerializeField] private XRNode _handType;
+
+    /////////////////// 
+    //private methods
+    ///////////////////
+    private void Awake()
+    {
+        _xrray = GetComponent<XRRayInteractor>();
+        _linerender = GetComponent<LineRenderer>();
+        _xrLineVis = GetComponent<XRInteractorLineVisual>();
+    }
     private void Update()
     {
         bool grip = false;
        
-
-        //1. Collect controller data
-        InputDevice hand = InputDevices.GetDeviceAtXRNode(HandType);
+        InputDevice hand = InputDevices.GetDeviceAtXRNode(_handType);
         hand.TryGetFeatureValue(CommonUsages.gripButton, out grip);
 
-        if (grip) { //xrray.enabled = true;
+        if (grip) { 
 
-            linerender.enabled = true;
-            XRlineVis.enabled = true;
-            xrray.maxRaycastDistance = 30;
+            _linerender.enabled = true;
+            _xrLineVis.enabled = true;
+            _xrray.maxRaycastDistance = 30;
         }
         else{
-              //xrray.enabled = false;
 
-             linerender.enabled = false;
-            XRlineVis.enabled = false;
-            xrray.maxRaycastDistance = .5f;
+             _linerender.enabled = false;
+            _xrLineVis.enabled = false;
+            _xrray.maxRaycastDistance = .5f;
 
 
         }

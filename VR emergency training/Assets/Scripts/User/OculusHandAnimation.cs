@@ -6,9 +6,16 @@ using UnityEngine.XR;
 
 public class OculusHandAnimation : MonoBehaviour
 {
-    public XRNode HandType;
-    public Animator HandAnimator;
+    /////////////////// 
+    //private Variables
+    ///////////////////
+    
+    [SerializeField] private XRNode _HandType;
+    [SerializeField] private Animator _HandAnimator;
 
+    /////////////////// 
+    //private methods
+    //////////////////
     private void Update()
     {
         bool grip = false;
@@ -17,9 +24,7 @@ public class OculusHandAnimation : MonoBehaviour
         bool primaryTouch = false;
         bool secondaryTouch = false;
         float triggerDown = 0;
-
-        //1. Collect controller data
-        InputDevice hand = InputDevices.GetDeviceAtXRNode(HandType);
+        InputDevice hand = InputDevices.GetDeviceAtXRNode(_HandType);
         hand.TryGetFeatureValue(CommonUsages.gripButton, out grip);
         hand.TryGetFeatureValue(CommonUsages.triggerButton, out trigger);
         hand.TryGetFeatureValue(CommonUsages.primary2DAxisTouch, out primaryAxisTouch);
@@ -29,7 +34,6 @@ public class OculusHandAnimation : MonoBehaviour
 
         bool thumbDown = primaryAxisTouch || primaryTouch || secondaryTouch;
 
-        //2. Trigger down
         float triggerTotal = 0f;
         if (trigger)
         {
@@ -40,9 +44,8 @@ public class OculusHandAnimation : MonoBehaviour
             triggerTotal = triggerDown;
         }
 
-        //3. Set animations
-        HandAnimator.SetBool("GrabbingGrip", grip);
-        HandAnimator.SetBool("ThumbUp", !thumbDown);
-        HandAnimator.SetFloat("TriggerDown", triggerTotal);
+        _HandAnimator.SetBool("GrabbingGrip", grip);
+        _HandAnimator.SetBool("ThumbUp", !thumbDown);
+        _HandAnimator.SetFloat("TriggerDown", triggerTotal);
     }
 }

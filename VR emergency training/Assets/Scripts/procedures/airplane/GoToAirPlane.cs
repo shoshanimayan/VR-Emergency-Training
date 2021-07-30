@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GoToAirPlane : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void loadPlane() {
+    public void LoadPlane() {
         SceneManager.LoadScene(1);
     }
 }

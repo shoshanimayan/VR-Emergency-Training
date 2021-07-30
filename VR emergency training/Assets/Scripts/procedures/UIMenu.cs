@@ -6,44 +6,66 @@ using UnityEngine.UI;
 
 public class UIMenu : MonoBehaviour
 {
-    public GameObject instructions;
-    public Procedure procedure;
-   
-    private GameObject board;
-    public static string AfterText;
-    public static bool reset = false;
-    public Text info;
-    // Start is called before the first frame update
-    void Awake()
+    /////////////////// 
+    //private variables
+    ///////////////////
+    [SerializeField] private GameObject _instructions;
+    [SerializeField] private Text _info;
+    [SerializeField] private GameManager _manager;
+
+    private GameObject _board;
+
+    /////////////////// 
+    //private methods
+    ///////////////////
+    private void Awake()
     {
-        board = transform.parent.gameObject;
+        _board = transform.parent.gameObject;
         if (reset) {
-            info.text = AfterText;
+            _info.text = afterText;
             reset = false;
         }
 
     }
-    public void Update() {
+
+    private void Update() {
 
         if (reset)
         {
-            info.text = AfterText;
+            _info.text = afterText;
             reset = false;
         }
     }
-    public void CloseInstructions() {
 
-        instructions.SetActive(false);
+    private void CloseInstructions()
+    {
+
+        _instructions.SetActive(false);
     }
-    public void Close() {
-        board.SetActive(false);
+    private void Close()
+    {
+        _board.SetActive(false);
     }
 
-    public void StartProcedure() {
+    /////////////////// 
+    //public API
+    //////////////////
+    public static string afterText;
+    public static bool reset = false;
+
+ 
+
+    public void StartFire()
+    {
         CloseInstructions();
-        procedure.Initiate();
+        _manager.StartFire();
+        Close();
+    }
+    public void StartEarth()
+    {
+        CloseInstructions();
+        _manager.StartEarthQuake();
         Close();
     }
 
-    
 }

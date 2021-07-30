@@ -5,5 +5,6 @@ using UnityEngine;
 public abstract class Procedure : MonoBehaviour
 {
     public abstract void Initiate();
+    public abstract void Off();
 
 }

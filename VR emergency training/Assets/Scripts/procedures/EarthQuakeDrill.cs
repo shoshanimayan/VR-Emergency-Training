@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class EarthQuakeDrill : Procedure
 {
-    public GameManager manager;
-    public  bool running;
-    public GameObject earthQuakeProps;
-    private string instruction = "for your saftey get under a table during an earth quake";
-    // Start is called before the first frame update
-    void Awake()
+    /////////////////// 
+    //private variables
+    ///////////////////
+    [SerializeField] private GameManager _manager;
+    [SerializeField] private GameObject _earthQuakeProps;
+    private string _instruction = "for your saftey get under a table during an earth quake";
+
+    /////////////////// 
+    //private methods
+    //////////////////
+    private void Awake()
     {
         running = false;
-        earthQuakeProps.SetActive(false);
+        _earthQuakeProps.SetActive(false);
     }
 
-    // Update is called once per frame
- 
-    public void message(string text) {
-        manager.TextUpdate(text);
-    }
-    public void off() {
-        manager.off();
-        earthQuakeProps.SetActive(false);
+    /////////////////// 
+    //public API
+    //////////////////
+    public bool running;
+    public override void Off() 
+    {
+        _manager.Off();
+        _earthQuakeProps.SetActive(false);
         running = false;
         float t = GameManager.time;
         float minutes = Mathf.Floor(t / 60);
@@ -39,17 +44,17 @@ public class EarthQuakeDrill : Procedure
             sec = "0" + Mathf.RoundToInt(seconds).ToString();
         }
         else { sec = Mathf.RoundToInt(seconds).ToString(); }
-        UIMenu.AfterText = "Completed Fire Drill training\nTime: " + min + ":" + sec + "\nHints found: " + GameManager.hintsChecked.Count.ToString() + "/" + GameManager.hintsTotal.ToString();
+        UIMenu.afterText = "Completed Fire Drill training\nTime: " + min + ":" + sec + "\nHints found: " + GameManager.hintsChecked.Count.ToString() + "/" + GameManager.hintsTotal.ToString();
 
     }
 
     public override void Initiate()
     {
-        manager.on(2,"earthquake");
-        manager.TextUpdate(instruction);
-        earthQuakeProps.SetActive(true);
+        _manager.On(2,"earthquake");
+        _manager.TextUpdate(_instruction);
+        _earthQuakeProps.SetActive(true);
         running = true;
-        manager.music.EarthQuakeDrill();
+        _manager.music.EarthQuakeDrillAudio();
 
 
     }

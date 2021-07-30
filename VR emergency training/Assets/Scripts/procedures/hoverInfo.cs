@@ -6,18 +6,24 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class hoverInfo : XRBaseInteractable
 {
-    
-	public Text debug;
-	public string message;
+    /////////////////// 
+    //private Variables
+    ///////////////////
+    [SerializeField] private Text debug;
+    [SerializeField] private string message;
+
+    /////////////////// 
+    //private methods
+    ///////////////////
     protected override void Awake()
     {
         base.Awake();
-        onHoverEnter.AddListener(on);
-        onHoverExit.AddListener(off);
+        onHoverEnter.AddListener(On);
+        onHoverExit.AddListener(Off);
         
     }
     
-    public void on(XRBaseInteractor interactor) {
+    public void On(XRBaseInteractor interactor) {
 		debug.enabled = true;
 		debug.text = message;
         if (!GameManager.hintsChecked.Contains(gameObject)) {
@@ -25,7 +31,7 @@ public class hoverInfo : XRBaseInteractable
         }
  }
 
-	public void off(XRBaseInteractor interactor) {
+	public void Off(XRBaseInteractor interactor) {
 		debug.enabled = false;
  }
     

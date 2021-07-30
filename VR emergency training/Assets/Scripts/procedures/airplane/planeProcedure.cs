@@ -7,54 +7,57 @@ using UnityEngine.XR;
 
 
 
-public class planeProcedure : MonoBehaviour
+public class planeProcedure : Procedure
 {
-    public bool running;
-    public Text Message;
-    public  float time;
-    public GameObject button1;
-    public GameObject button2;
-    public AudioSource AS;
-    public GameObject leftHand;
-    public GameObject rightHand;
-    public GameObject headNode;
-    public GameObject pic1;
-    public GameObject pic2;
-    public AudioClip win;
+    /////////////////// 
+    //private Variables
+    ///////////////////
+    private bool _running;
+    private float _time;
+    private string _instruction = "For your safety, Please put your head in your lap with your hands ontop of your head";
 
-    //device
-    InputDevice handL;
-    InputDevice handR ;
-    InputDevice head;
+    [SerializeField] private Text _message;
+    [SerializeField] private GameObject _button1;
+    [SerializeField] private GameObject _button2;
+    [SerializeField] private AudioSource _aS;
+    [SerializeField] private GameObject _leftHand;
+    [SerializeField] private GameObject _rightHand;
+    [SerializeField] private GameObject _headNode;
+    [SerializeField] private GameObject _pic1;
+    [SerializeField] private GameObject _pic2;
+    [SerializeField] private AudioClip _win;
 
+    private InputDevice handL;
+    private InputDevice handR ;
+    private InputDevice head;
 
-
-    private string instruction = "For your safety, Please put your head in your lap with your hands ontop of your head";
-    // Start is called before the first frame update
-    void Awake()
+    /////////////////// 
+    //private methods
+    //////////////////
+    private void Awake()
     {
 
-        handL = InputDevices.GetDeviceAtXRNode(leftHand.GetComponent<XRController>().controllerNode);
-        handR = InputDevices.GetDeviceAtXRNode(rightHand.GetComponent<XRController>().controllerNode);
-         head = InputDevices.GetDeviceAtXRNode(headNode.GetComponent<XRController>().controllerNode);
+        handL = InputDevices.GetDeviceAtXRNode(_leftHand.GetComponent<XRController>().controllerNode);
+        handR = InputDevices.GetDeviceAtXRNode(_rightHand.GetComponent<XRController>().controllerNode);
+         head = InputDevices.GetDeviceAtXRNode(_headNode.GetComponent<XRController>().controllerNode);
 
-        pic1.SetActive(false);
-        pic2.SetActive(false);
+        _pic1.SetActive(false);
+        _pic2.SetActive(false);
 
-        running = false;
-        AS.Pause();
-        time = 0;
-        Message.text = "Press Start to begin the Procedure";
+        _running = false;
+        _aS.Pause();
+        _time = 0;
+        _message.text = "Before beginning please make sure to be seated\nPress Start to begin the Procedure";
 
 
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (running)
+        if (_running)
         {
-            time += Time.deltaTime;
+            _time += Time.deltaTime;
             Vector3 positionL = Vector3.zero;
             Vector3 positionR = Vector3.zero;
             Vector3 positionH = Vector3.zero;
@@ -66,19 +69,21 @@ public class planeProcedure : MonoBehaviour
             Vector3 headToLeft = (positionL - positionH);
             if (headToLeft.z <= 0 && headToRight.z <= 0)
             {
-                off();
+                Off();
             }
         }
        
     }
-    
 
-    
-    public void off()
+    /////////////////// 
+    //public API
+    //////////////////
+
+    public override void Off()
     {
-        running = false;
-        float minutes = Mathf.Floor(time / 60);
-        float seconds = Mathf.RoundToInt(time % 60);
+        _running = false;
+        float minutes = Mathf.Floor(_time / 60);
+        float seconds = Mathf.RoundToInt(_time % 60);
         string min;
         string sec;
         if (minutes < 10)
@@ -91,25 +96,25 @@ public class planeProcedure : MonoBehaviour
             sec = "0" + Mathf.RoundToInt(seconds).ToString();
         }
         else { sec = Mathf.RoundToInt(seconds).ToString(); }
-        Message.text = "Completed Plane Crash training\nTime: " + min + ":" + sec;
-        button1.SetActive(true);
-        button2.SetActive(true);
-        pic1.SetActive(false);
-        pic2.SetActive(false);
-        AS.PlayOneShot(win);
-        AS.Pause();
+        _message.text = "Completed Plane Crash training\nTime: " + min + ":" + sec;
+        _button1.SetActive(true);
+        _button2.SetActive(true);
+        _pic1.SetActive(false);
+        _pic2.SetActive(false);
+        _aS.PlayOneShot(_win);
+        _aS.Pause();
     }
 
-    public void Initiate()
+    public override void Initiate()
     {
-        time = 0;
-        running = true;
-        AS.Play();
-        button1.SetActive(false);
-        button2.SetActive(false);
-        Message.text = instruction;
-        pic1.SetActive(true);
-        pic2.SetActive(true);
+        _time = 0;
+        _running = true;
+        _aS.Play();
+        _button1.SetActive(false);
+        _button2.SetActive(false);
+        _message.text = _instruction;
+        _pic1.SetActive(true);
+        _pic2.SetActive(true);
 
 
 
