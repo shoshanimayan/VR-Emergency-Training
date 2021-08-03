@@ -4190,7 +4190,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_FontSize: 130
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5644,7 +5644,6 @@ GameObject:
   - component: {fileID: 529125772}
   - component: {fileID: 529125771}
   - component: {fileID: 529125770}
-  - component: {fileID: 529125773}
   m_Layer: 0
   m_Name: Fire Button
   m_TagString: Untagged
@@ -5716,8 +5715,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 529125773}
-        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+      - m_Target: {fileID: 1356539685}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StartFire
         m_Mode: 1
         m_Arguments:
@@ -5766,21 +5765,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529125768}
   m_CullTransparentMesh: 0
---- !u!114 &529125773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529125768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9291210fafbf84b2aa68d63baa75fe3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _instructions: {fileID: 1976872554}
-  _info: {fileID: 335994125}
-  _manager: {fileID: 1356539685}
 --- !u!1 &536525831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1774288481246472, guid: e8d3a72b8c8548f469a0a533f1fbe295,
@@ -15579,9 +15563,13 @@ MonoBehaviour:
   _menus:
   - {fileID: 1976872554}
   - {fileID: 284874571}
+  _instructionPanel: {fileID: 1976872554}
+  _info: {fileID: 335994125}
+  _board: {fileID: 284874571}
   music: {fileID: 1174972528}
   fire: {fileID: 1356539683}
   earth: {fileID: 1356539682}
+  afterText: 
 --- !u!82 &1356539686
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21057,7 +21045,6 @@ GameObject:
   - component: {fileID: 1811028899}
   - component: {fileID: 1811028898}
   - component: {fileID: 1811028897}
-  - component: {fileID: 1811028900}
   m_Layer: 0
   m_Name: EarthQuake Button
   m_TagString: Untagged
@@ -21129,9 +21116,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1811028900}
-        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
-        m_MethodName: StartEarth
+      - m_Target: {fileID: 1356539685}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartEarthQuake
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21179,21 +21166,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811028895}
   m_CullTransparentMesh: 0
---- !u!114 &1811028900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811028895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9291210fafbf84b2aa68d63baa75fe3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _instructions: {fileID: 1976872554}
-  _info: {fileID: 335994125}
-  _manager: {fileID: 1356539685}
 --- !u!1001 &1811082652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21984,7 +21956,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1925976678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88dadfa1211b6be4389e7291884667fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8992b7ff37e195642b4628423e3c385f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1925976681
@@ -22032,7 +22004,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1925976680}
-        m_TargetAssemblyTypeName: GoToAirPlane, Assembly-CSharp
+        m_TargetAssemblyTypeName: AirplaneNavigation, Assembly-CSharp
         m_MethodName: LoadPlane
         m_Mode: 1
         m_Arguments:

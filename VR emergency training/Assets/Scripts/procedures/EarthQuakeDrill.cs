@@ -26,7 +26,6 @@ public class EarthQuakeDrill : Procedure
     public bool running;
     public override void Off() 
     {
-        _manager.Off();
         _earthQuakeProps.SetActive(false);
         running = false;
         float t = GameManager.time;
@@ -44,7 +43,8 @@ public class EarthQuakeDrill : Procedure
             sec = "0" + Mathf.RoundToInt(seconds).ToString();
         }
         else { sec = Mathf.RoundToInt(seconds).ToString(); }
-        UIMenu.afterText = "Completed Fire Drill training\nTime: " + min + ":" + sec + "\nHints found: " + GameManager.hintsChecked.Count.ToString() + "/" + GameManager.hintsTotal.ToString();
+        _manager.afterText = "Completed Earth Quake training\nTime: " + min + ":" + sec + "\nHints found: " + GameManager.hintsChecked.Count.ToString() + "/" + GameManager.hintsTotal.ToString();
+        _manager.Off();
 
     }
 
