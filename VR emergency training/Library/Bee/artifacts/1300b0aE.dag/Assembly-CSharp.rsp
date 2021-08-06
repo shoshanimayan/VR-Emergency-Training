@@ -331,6 +331,8 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/resources/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/Scripts/Readme.cs"
 "Assets/resources/images/Keypad/Script/Playsound.cs"
+"Assets/Scripts/Hub/Hub_NetWorkManager.cs"
+"Assets/Scripts/Hub/Hub_PanelManager.cs"
 "Assets/Scripts/procedures/airplane/AirplaneNavigation.cs"
 "Assets/Scripts/procedures/airplane/planeProcedure.cs"
 "Assets/Scripts/procedures/EarthQuakeDrill.cs"

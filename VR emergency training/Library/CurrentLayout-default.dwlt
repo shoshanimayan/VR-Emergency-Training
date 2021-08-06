@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 20
+  controlID: 103
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 91
+  controlID: 104
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 92
+  controlID: 105
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -407,23 +407,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/procedures
+    - Assets/Scripts/Hub
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/procedures
+  - Assets/Scripts/Hub
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Shosh\Documents\VR-Emergency-Training\VR emergency
     training
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 52570000
-    m_LastClickedID: 22354
-    m_ExpandedIDs: 00000000485700004a5700004c5700004e57000050570000525700005457000000ca9a3b
+    scrollPos: {x: 0, y: 173}
+    m_SelectedIDs: f2860000
+    m_LastClickedID: 34546
+    m_ExpandedIDs: 00000000485700004a5700004c5700004e5700005057000052570000545700005482000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -495,7 +495,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 3}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -575,23 +575,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 784c0000
-      m_LastClickedID: 19576
-      m_ExpandedIDs: 4cfbffff5a4c000032510000
+      m_SelectedIDs: 40870000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 8ca8fffffca8fffffcb2ffff04b3ffff62bfffff7ecfffff8ad1ffff54d7ffff92e6ffffdce9ffff8eeaffff3af2ffff4cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: username (1)
+        m_OriginalName: username (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -22274
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 4
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -638,9 +638,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.06747, y: 1.557749, z: 6.20837}
+    m_Target: {x: 1.5047185, y: 1.3647623, z: -5.1549587}
     speed: 2
-    m_Value: {x: 2.06747, y: 1.557749, z: 6.20837}
+    m_Value: {x: 1.5047185, y: 1.3647623, z: -5.1549587}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -687,13 +687,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.037348177, y: 0.06399893, z: 0.0034759757, w: -0.9974079}
+    m_Target: {x: 0.038967155, y: 0.022238763, z: -0.0019014045, w: 0.9991592}
     speed: 2
-    m_Value: {x: 0.0373421, y: 0.063988514, z: 0.0034754102, w: -0.99724567}
+    m_Value: {x: 0.038960617, y: 0.02223503, z: -0.0019010854, w: 0.99899155}
   m_Size:
-    m_Target: 1.6202354
+    m_Target: 45.815956
     speed: 2
-    m_Value: 1.6202354
+    m_Value: 45.815956
   m_Ortho:
     m_Target: 0
     speed: 2
