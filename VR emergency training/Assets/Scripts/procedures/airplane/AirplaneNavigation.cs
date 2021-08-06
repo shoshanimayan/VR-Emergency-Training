@@ -7,10 +7,10 @@ public class AirplaneNavigation : MonoBehaviour
 {
     public void LoadPlane()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void LoadOffice()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

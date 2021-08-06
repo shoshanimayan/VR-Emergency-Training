@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Hub_NetWorkManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Login(string username, string password)
     {
-        
+        SceneManager.LoadScene(1);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SignUp(string username, string email, string password)
     {
-        
+        SceneManager.LoadScene(1);
+
     }
+
 }
