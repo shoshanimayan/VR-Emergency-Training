@@ -345,6 +345,20 @@
 "Assets/Scripts/User/MovementController.cs"
 "Assets/Scripts/User/OculusHandAnimation.cs"
 "Assets/Scripts/User/player.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIButtonIconToggle.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUICheckbox.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIColorPalette.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIControlBarButton.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIKeyboard.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUILookAtCam.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIOutlineButton.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIPagination.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIRadio.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUISlider.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUITabButton.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUIToggle.cs"
+"Assets/VRUI - Material Design/Assets/Scripts/VRUITooltip.cs"
+"Assets/VRUI - Material Design/Demo/SampleSceneAssets/SampleSceneManager.cs"
 -langversion:8.0
 
 /deterministic

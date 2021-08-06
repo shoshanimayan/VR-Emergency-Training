@@ -345,6 +345,8 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/resources/AssetStoreOriginals/_SNAPS_PrototypingAssets/About/Scripts/Editor/ReadmeEditor.cs"
 "Assets/resources/AssetStoreOriginals/_SNAPS_PrototypingAssets/Scripts/Editor/PackageChecker/PackageChecker.cs"
+"Assets/VRUI - Material Design/Editor/VRUIColorPaletteEditor.cs"
+"Assets/VRUI - Material Design/Editor/VRUITagManager.cs"
 -langversion:8.0
 
 /deterministic
