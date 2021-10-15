@@ -191,7 +191,6 @@ namespace SpaceBear.VRUI
                 specialKeyboard.SetActive(isSymbols);
                 uppercaseKeyboard.SetActive(!isSymbols && isUppercase);
                 lowercaseKeyboard.SetActive(!isSymbols && !isUppercase);
-                VRUIColorPalette.Instance.UpdateColors();
             }
         }
     }
