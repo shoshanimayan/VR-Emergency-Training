@@ -8,6 +8,10 @@ public class Hub_PanelManager : MonoBehaviour
 {
     [SerializeField] GameObject[] _panelList;
 
+    [SerializeField] TextMeshProUGUI _ErrorText;
+
+    [SerializeField] GameObject _back;
+
     [SerializeField] TextMeshProUGUI _loginUsername;
     [SerializeField] TextMeshProUGUI _loginPassword;
 
@@ -16,38 +20,88 @@ public class Hub_PanelManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _signupEmail;
 
     private Hub_NetWorkManager network;
-
+    private char[] _trim = { '*', ' ', '\'' };
     private void Awake()
     {
         network = GetComponent<Hub_NetWorkManager>();
+        _back.SetActive(false);
+
     }
 
     public void GoLogin() {
-        _panelList[0].SetActive(false);
-        _panelList[1].SetActive(true);
+        if (GameManager.Online)
+        {
+            _panelList[0].SetActive(false);
+            _panelList[1].SetActive(true);
+        }
+        else 
+        {
+            ErrorMessager("could not connect to API, please use offline demo");
+
+        }
     }
+
+    public void Back() 
+    {
+        _panelList[2].SetActive(false);
+        _panelList[1].SetActive(false);
+        _panelList[0].SetActive(true);
+        _back.SetActive(false);
+    }
+
+
 
     public void GoSignUp()
     {
-        _panelList[0].SetActive(false);
-        _panelList[2].SetActive(true);
+        if (GameManager.Online)
+        {
+            _panelList[0].SetActive(false);
+            _panelList[2].SetActive(true);
+            _back.SetActive(true);
+
+        }
+        else
+        {
+            ErrorMessager("could not connect to API, please use offline demo");
+        }
     }
 
     public void SignUp()
     {
-        network.SignUp(_signupUsername.text, _signupEmail.text,_signupPassword.text);
+        if (_signupUsername.text.Remove(_signupUsername.text.Length - 1).Trim(_trim).Length > 0 && _signupPassword.text.Remove(_signupPassword.text.Length - 1).Trim(_trim).Length > 0)
+        {
+            Debug.Log(_signupUsername.text.Remove(_signupUsername.text.Length - 1).Trim(_trim));
+            network.SignUp(_signupUsername.text.Remove(_signupUsername.text.Length - 1).Trim(_trim), _signupEmail.text.Remove(_signupEmail.text.Length - 1).Trim(_trim), _signupPassword.text.Remove(_signupPassword.text.Length - 1).Trim(_trim));
+            _back.SetActive(true);
+        }
+        else {
+            ErrorMessager("missing field");
+        }
+
     }
 
     public void Login()
     {
-
-        network.Login(_loginUsername.text,_loginPassword.text);
+        if (_loginUsername.text.Remove(_loginUsername.text.Length - 1).Trim(_trim).Length > 0 && _loginPassword.text.Remove(_loginPassword.text.Length - 1).Trim(_trim).Length > 0)
+        {
+            network.Login(_loginUsername.text.Remove(_loginUsername.text.Length - 1).Trim(_trim), _loginPassword.text.Remove(_loginPassword.text.Length - 1).Trim(_trim));
+        }
+        else
+        {
+            ErrorMessager("missing field");
+        }
     }
 
     public void OffLineStart()
     {
+        GameManager.Online = false;
         SceneManager.LoadScene(1);
         
+    }
+
+    public void ErrorMessager(string msg)
+    {
+        _ErrorText.text = msg;
     }
 
 
