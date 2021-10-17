@@ -15,7 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/airplane.unity
     guid: 03e90d9f433eb4141808922906d2187e
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 09db41d7df2dafb4b866056fd125bca5,
-      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3d3bc4ea74eb642eba7ad92afeaf08c2,
       type: 2}

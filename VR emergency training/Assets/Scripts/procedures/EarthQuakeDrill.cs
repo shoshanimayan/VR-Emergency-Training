@@ -10,8 +10,6 @@ public class EarthQuakeDrill : Procedure
     [SerializeField] private GameManager _manager;
     [SerializeField] private GameObject _earthQuakeProps;
     private string _instruction = "for your saftey get under a table during an earth quake";
-    private NetworkManager _network { get { return NetworkManager.Instance; } }
-
 
     /////////////////// 
     //private methods
@@ -47,10 +45,6 @@ public class EarthQuakeDrill : Procedure
         else { sec = Mathf.RoundToInt(seconds).ToString(); }
         _manager.afterText = "Completed Earth Quake training\nTime: " + min + ":" + sec + "\nHints found: " + GameManager.hintsChecked.Count.ToString() + "/" + GameManager.hintsTotal.ToString();
         _manager.Off();
-        if (GameManager.Online)
-        {
-            _network.SendExercise("earthQuake",GameManager.hintsTotal.ToString(),GameManager.hintsChecked.Count.ToString(),GameManager.time.ToString());
-        }
 
     }
 

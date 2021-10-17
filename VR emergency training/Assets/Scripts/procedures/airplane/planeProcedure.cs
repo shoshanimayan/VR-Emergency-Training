@@ -30,7 +30,6 @@ public class planeProcedure : Procedure
     private InputDevice handL;
     private InputDevice handR ;
     private InputDevice head;
-    private NetworkManager _network { get { return NetworkManager.Instance; } }
 
     /////////////////// 
     //private methods
@@ -104,10 +103,6 @@ public class planeProcedure : Procedure
         _pic2.SetActive(false);
         _aS.PlayOneShot(_win);
         _aS.Pause();
-        if (GameManager.Online)
-        {
-            _network.SendExercise("earthQuake","0", "0", GameManager.time.ToString());
-        }
     }
 
     public override void Initiate()
