@@ -15719,7 +15719,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc755a62ea6b0e54ea83085e615dad6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scene: 0
+  _scene:
+    m_AssetGUID: 854079fb2b93ff548b2f30d476aa92d6
+    m_SubObjectName: 
+    m_SubObjectType: 
 --- !u!114 &1367097929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22229,7 +22232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc755a62ea6b0e54ea83085e615dad6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scene: 2
+  _scene:
+    m_AssetGUID: 03e90d9f433eb4141808922906d2187e
+    m_SubObjectName: 
+    m_SubObjectType: 
 --- !u!114 &1925976681
 MonoBehaviour:
   m_ObjectHideFlags: 0

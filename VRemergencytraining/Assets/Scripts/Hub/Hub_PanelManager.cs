@@ -4,23 +4,28 @@ using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.AddressableAssets;
+
 public class Hub_PanelManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] _panelList;
+    [SerializeField] private GameObject[] _panelList;
 
-    [SerializeField] TextMeshProUGUI _ErrorText;
+    [SerializeField] private TextMeshProUGUI _ErrorText;
 
-    [SerializeField] GameObject _back;
+    [SerializeField] private GameObject _back;
 
-    [SerializeField] TextMeshProUGUI _loginUsername;
-    [SerializeField] TextMeshProUGUI _loginPassword;
+    [SerializeField] private TextMeshProUGUI _loginUsername;
+    [SerializeField] private TextMeshProUGUI _loginPassword;
 
-    [SerializeField] TextMeshProUGUI _signupUsername;
-    [SerializeField] TextMeshProUGUI _signupPassword;
-    [SerializeField] TextMeshProUGUI _signupEmail;
+    [SerializeField] private TextMeshProUGUI _signupUsername;
+    [SerializeField] private TextMeshProUGUI _signupPassword;
+    [SerializeField] private TextMeshProUGUI _signupEmail;
+    [SerializeField] private AssetReference _scene;
 
     private Hub_NetWorkManager network;
     private char[] _trim = { '*', ' ', '\'' };
+    private SceneLoader _sceneLoader { get { return SceneLoader.Instance; } }
+
     private void Awake()
     {
         network = GetComponent<Hub_NetWorkManager>();
@@ -95,8 +100,13 @@ public class Hub_PanelManager : MonoBehaviour
     public void OffLineStart()
     {
         GameManager.Online = false;
-        SceneManager.LoadScene(1);
+        _sceneLoader.Load(_scene);
         
+    }
+
+    public void OnLineStart()
+    {
+        _sceneLoader.Load(_scene);
     }
 
     public void ErrorMessager(string msg)

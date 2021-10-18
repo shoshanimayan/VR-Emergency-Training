@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using System;
@@ -63,7 +60,7 @@ public class Hub_NetWorkManager : MonoBehaviour
 
                 if (jsonResponse.Contains("Success"))
                 {
-                    SceneManager.LoadScene(1);
+                    _panelManager.OnLineStart();
                 }
                 else
                 {
@@ -113,7 +110,7 @@ public class Hub_NetWorkManager : MonoBehaviour
 
                 if (jsonResponse.Contains("Success"))
                 {
-                    SceneManager.LoadScene(1);
+                    _panelManager.OnLineStart();
                 }
                 else
                 {

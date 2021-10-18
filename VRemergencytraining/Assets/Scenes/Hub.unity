@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15832502, g: 0.15832502, b: 0.15832502, a: 1}
+  m_IndirectSpecularColor: {r: 0.003535585, g: 0.0044773496, b: 0.006171028, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1746,6 +1746,10 @@ MonoBehaviour:
   _signupUsername: {fileID: 1157736573}
   _signupPassword: {fileID: 699736209}
   _signupEmail: {fileID: 151258998}
+  _scene:
+    m_AssetGUID: 2194fe559202da244a6cc0ad8cbc636d
+    m_SubObjectName: 
+    m_SubObjectType: 
 --- !u!114 &598283449
 MonoBehaviour:
   m_ObjectHideFlags: 0
