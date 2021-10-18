@@ -6,6 +6,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using System.Linq;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class SceneLoader : Singleton<SceneLoader>
 {
@@ -48,6 +49,14 @@ public class SceneLoader : Singleton<SceneLoader>
 
     }
 
+    public IEnumerator ResetCamera()
+    {
+
+        yield return new WaitForEndOfFrame();
+
+        FindObjectOfType<XRRig>().transform.eulerAngles = Vector3.zero;
+    }
+
     // Start is called before the first frame update
     public void Load(AssetReference scene)
     {
@@ -67,6 +76,7 @@ public class SceneLoader : Singleton<SceneLoader>
             Debug.Log("Successfully loaded scene.");
             handle = obj;
             unloaded = false;
+            StartCoroutine(ResetCamera());
         }
     }
 
