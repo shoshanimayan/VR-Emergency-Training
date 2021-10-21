@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 
-
+using TMPro;
 
 public class planeProcedure : Procedure
 {
@@ -16,9 +16,10 @@ public class planeProcedure : Procedure
     private float _time;
     private string _instruction = "For your safety, Please put your head in your lap with your hands ontop of your head";
 
-    [SerializeField] private Text _message;
+    [SerializeField] private TextMeshProUGUI _message;
     [SerializeField] private GameObject _button1;
     [SerializeField] private GameObject _button2;
+    [SerializeField] private GameObject _button3;
     [SerializeField] private AudioSource _aS;
     [SerializeField] private GameObject _leftHand;
     [SerializeField] private GameObject _rightHand;
@@ -100,6 +101,7 @@ public class planeProcedure : Procedure
         _message.text = "Completed Plane Crash training\nTime: " + min + ":" + sec;
         _button1.SetActive(true);
         _button2.SetActive(true);
+        _button3.SetActive(true);
         _pic1.SetActive(false);
         _pic2.SetActive(false);
         _aS.PlayOneShot(_win);
@@ -117,6 +119,8 @@ public class planeProcedure : Procedure
         _aS.Play();
         _button1.SetActive(false);
         _button2.SetActive(false);
+        _button3.SetActive(false);
+
         _message.text = _instruction;
         _pic1.SetActive(true);
         _pic2.SetActive(true);
