@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;public class GameManager : MonoBehaviour{
+﻿using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;using TMPro;public class GameManager : MonoBehaviour{
     /////////////////// 
     //private variables
     ///////////////////
-    [SerializeField] private Text _timer;    [SerializeField] private Text _instructions;
+    [SerializeField] private TextMeshProUGUI _timer;    [SerializeField] private TextMeshProUGUI _instructions;
     [SerializeField] private GameObject[] _menus;
     [SerializeField] private GameObject _instructionPanel;
-    [SerializeField] private Text _info;
+    [SerializeField] private TextMeshProUGUI _info;
     [SerializeField] private GameObject _board;
     private bool _running;
     
@@ -13,6 +13,7 @@
     //private methods
     //////////////////
     private void Awake()    {        _timer.enabled = false;        _instructions.enabled = false;        _running = false;        hintsChecked = new List<GameObject>();
+        _info.text = "";
 
     }
 
