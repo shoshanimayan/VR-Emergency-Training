@@ -1,7 +1,7 @@
 # VR-Emergency-Training
 a proof of concept project VR training for fires, earthquakes, and plane crashes, teaches users what to do in those cases by physically hiding under tables, evacuate, and taking the brace position made in Unity3d for Oculus devices.
 
-has an offline demo demo mode, and a login and signup feature to access an online mode where data from training is recorded through a backend REST API and the data can be viewed from a front end web app.
+has an offline demo  mode, and a login and signup feature to access an online mode where data from training is recorded through a backend REST API and the data can be viewed from a front end web app.
 
 [Back end](https://github.com/shoshanimayan/EmergencyTrainingBackend)<br/>
 [Front end](https://github.com/shoshanimayan/emergencyTrainingWebFrontEnd)
