@@ -3,7 +3,7 @@ a proof of concept project VR training for fires, earthquakes, and plane crashes
 
 has an offline demo demo mode, and a login and signup feature to access an online mode where data from training is recorded through a backend REST API and and can bbe viewed from a front end web app.
 
-[Back end](https://github.com/shoshanimayan/EmergencyTrainingBackend)
+[Back end](https://github.com/shoshanimayan/EmergencyTrainingBackend)<br/>
 [Front end](https://github.com/shoshanimayan/emergencyTrainingWebFrontEnd)
 
 neither the front end nor backend are currently hosted online, because of both cost and data privacy concerns, and therefore need to be run locally , see their respective repos for instructions on how to see that up.
