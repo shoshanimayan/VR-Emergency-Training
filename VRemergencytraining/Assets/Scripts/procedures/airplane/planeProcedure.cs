@@ -9,9 +9,9 @@ using TMPro;
 
 public class planeProcedure : Procedure
 {
-    /////////////////// 
+     
     //private Variables
-    ///////////////////
+    
     private bool _running;
     private float _time;
     private string _instruction = "For your safety, Please put your head in your lap with your hands ontop of your head";
@@ -33,9 +33,9 @@ public class planeProcedure : Procedure
     private InputDevice head;
     private NetworkManager _network { get { return NetworkManager.Instance; } }
 
-    /////////////////// 
+     
     //private methods
-    //////////////////
+    
     private void Awake()
     {
 
@@ -77,9 +77,9 @@ public class planeProcedure : Procedure
        
     }
 
-    /////////////////// 
+     
     //public API
-    //////////////////
+    
 
     public override void Off()
     {

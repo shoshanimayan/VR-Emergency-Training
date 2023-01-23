@@ -6,16 +6,16 @@ public class player : MonoBehaviour
 {
 
     
-    /////////////////// 
+     
     //private variables
-    ///////////////////
+    
     private Vector3 spawn;
 
     [SerializeField] private GameManager _manager;
 
-    /////////////////// 
+     
     //private methods
-    ///////////////////
+    
     private void Awake()
     {
         spawn = transform.position;  

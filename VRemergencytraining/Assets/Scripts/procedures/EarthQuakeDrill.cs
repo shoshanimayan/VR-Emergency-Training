@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class EarthQuakeDrill : Procedure
 {
-    /////////////////// 
+     
     //private variables
-    ///////////////////
+    
     [SerializeField] private GameManager _manager;
     [SerializeField] private GameObject _earthQuakeProps;
     private string _instruction = "for your saftey get under a table during an earth quake";
     private NetworkManager _network { get { return NetworkManager.Instance; } }
 
 
-    /////////////////// 
+     
     //private methods
-    //////////////////
+    
     private void Awake()
     {
         running = false;
         _earthQuakeProps.SetActive(false);
     }
 
-    /////////////////// 
+     
     //public API
-    //////////////////
+    
     public bool running;
     public override void Off() 
     {

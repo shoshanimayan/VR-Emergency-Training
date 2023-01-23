@@ -6,16 +6,16 @@ using UnityEngine.XR;
 
 public class OculusHandAnimation : MonoBehaviour
 {
-    /////////////////// 
+     
     //private Variables
-    ///////////////////
+    
     
     [SerializeField] private XRNode _HandType;
     [SerializeField] private Animator _HandAnimator;
 
-    /////////////////// 
+     
     //private methods
-    //////////////////
+    
     private void Update()
     {
         bool grip = false;

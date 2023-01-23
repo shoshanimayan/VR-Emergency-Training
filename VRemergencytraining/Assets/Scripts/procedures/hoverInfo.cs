@@ -6,15 +6,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 public class hoverInfo : XRBaseInteractable
 {
-    /////////////////// 
+     
     //private Variables
-    ///////////////////
+    
     [SerializeField] private TextMeshProUGUI debug;
     [SerializeField] private string message;
 
-    /////////////////// 
+     
     //private methods
-    ///////////////////
+    
     protected override void Awake()
     {
         base.Awake();

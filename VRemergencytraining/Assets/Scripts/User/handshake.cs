@@ -7,18 +7,17 @@ using UnityEngine.XR;
 
 public class handshake : MonoBehaviour
 {
-    /////////////////// 
+     
     //private Variables
-    ///////////////////
+    
     private XRRayInteractor _xrray;
      private LineRenderer _linerender;
      private XRInteractorLineVisual _xrLineVis;
 
     [SerializeField] private XRNode _handType;
 
-    /////////////////// 
     //private methods
-    ///////////////////
+    
     private void Awake()
     {
         _xrray = GetComponent<XRRayInteractor>();

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;using TMPro;public class GameManager : MonoBehaviour{
-    /////////////////// 
+     
     //private variables
-    ///////////////////
+    
     [SerializeField] private TextMeshProUGUI _timer;    [SerializeField] private TextMeshProUGUI _instructions;
     [SerializeField] private GameObject[] _menus;
     [SerializeField] private GameObject _instructionPanel;
@@ -9,9 +9,9 @@
     [SerializeField] private GameObject _board;
     private bool _running;
     
-    /////////////////// 
+     
     //private methods
-    //////////////////
+    
     private void Awake()    {        _timer.enabled = false;        _instructions.enabled = false;        _running = false;        hintsChecked = new List<GameObject>();
         _info.text = "";
 
@@ -47,9 +47,9 @@
     }
 
 
-    /////////////////// 
+     
     //public API
-    //////////////////
+    
     public musicManager music;    public static float time;    public static List<GameObject> hintsChecked;    public static int hintsTotal;    public static bool Online;
     public FireDrill fire;
     public EarthQuakeDrill earth;

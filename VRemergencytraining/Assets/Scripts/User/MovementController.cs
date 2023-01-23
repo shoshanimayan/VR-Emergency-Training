@@ -6,18 +6,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class MovementController : LocomotionProvider
 {
 
-    /////////////////// 
+     
     //private Variables
-    ///////////////////
+    
     private CharacterController _characterController = null;
     private GameObject _head = null;
     [SerializeField] private float _gravityMultiplier = 10f;
     [SerializeField] private float _speed = 2f;
     [SerializeField] private List<XRController> _controllers = null;
 
-    /////////////////// 
+     
     //private methods
-    ///////////////////
+    
     protected override void Awake()
     {
         _characterController = GetComponent<CharacterController>();

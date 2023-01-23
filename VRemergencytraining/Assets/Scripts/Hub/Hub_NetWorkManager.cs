@@ -6,14 +6,14 @@ using System;
 
 public class Hub_NetWorkManager : MonoBehaviour
 {
-    /////////////////// 
+     
     //private variables
-    ///////////////////
+    
     private Hub_PanelManager _panelManager;
 
-    /////////////////// 
+     
     //private methods
-    //////////////////
+    
     private void Awake()
     {
         _panelManager = GetComponent<Hub_PanelManager>();
@@ -40,9 +40,9 @@ public class Hub_NetWorkManager : MonoBehaviour
         }
         Debug.Log(GameManager.Online);
     }
-    /////////////////// 
+     
     //public API
-    //////////////////
+    
     public async void Login(string username, string password)
     {
         using var www = UnityWebRequest.Get(Constants.url + $"login?username={username}&password={password}");
